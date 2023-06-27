@@ -5,9 +5,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AddEditProductComponent } from './components/add-edit-product/add-edit-product.component';
 
 // Guards
 import { AuthGuard } from './utils/auth.guard';
+
 
 
 const routes: Routes = [
@@ -15,7 +17,9 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "signIn", component: SignInComponent },
   { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: "**", redirectTo: "login", pathMatch: "full" }
+  { path: "add", component: AddEditProductComponent, canActivate: [AuthGuard] },
+  { path: "edit/:id", component: AddEditProductComponent, canActivate: [AuthGuard]},
+  { path: "**", redirectTo: "login", pathMatch: "full" },
 ];
 
 @NgModule({
