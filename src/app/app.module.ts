@@ -17,6 +17,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { AddTokenInterceptor } from './utils/add-token.interceptor';
+import { ListProductsComponent } from './components/list-products/list-products.component';
+import { AddEditProductComponent } from './components/add-edit-product/add-edit-product.component';
 
 
 
@@ -27,7 +29,9 @@ import { AddTokenInterceptor } from './utils/add-token.interceptor';
     SignInComponent,
     DashboardComponent,
     NavbarComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ListProductsComponent,
+    AddEditProductComponent
   ],
   imports: [
     BrowserModule,
