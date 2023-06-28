@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http"
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //Componentes
 import { LoginComponent } from './components/login/login.component';
@@ -39,6 +40,7 @@ import { AddEditProductComponent } from './components/add-edit-product/add-edit-
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       positionClass: "toast-top-center",
