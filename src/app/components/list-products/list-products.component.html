@@ -3,8 +3,10 @@
         <h4>Listado de Productos</h4>
         <button type="button" class="btn btn-outline-primary" routerLink="/add">Agregar producto</button>
     </div>
-
-    <table class="table table-hover">
+    <div class="loading">
+        <app-spinner *ngIf="loading"></app-spinner>
+    </div>
+    <table *ngIf="listProducts.length > 0" class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
@@ -18,13 +20,14 @@
             <tr *ngFor="let item of listProducts" class="table-active">
                 <td>{{ item.name }}</td>
                 <td>{{ item.description }}</td>
-                <td>{{ item.price }}</td>
+                <td>{{ item.price | currency}}</td>
                 <td>{{ item.stock }}</td>
                 <td>
                     <button type="button" class="btn btn-info btn-sm" routerLink="/edit/{{ item.id }}">Editar</button>
-                    <button type="button" class="btn btn-secondary btn-sm ms-2">Eliminar</button>
+                    <button (click)="deleteProduct(item.id!)" type="button" class="btn btn-secondary btn-sm ms-2">Eliminar</button>
                 </td>
             </tr>
         </tbody>
     </table>
+    <h5 *ngIf="listProducts.length == 0">No hay productos para mostrar</h5>
 </div>

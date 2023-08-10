@@ -3,3 +3,10 @@
     display: flex;
     justify-content: space-between;
 }
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
